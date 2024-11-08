@@ -11,7 +11,7 @@ INNER JOIN reservas rs
 	ON us.id = rs.id_usuario;
 
 INSERT INTO viagens.destinos ( nome, descricao) VALUES 
-('Deestino sem reserva', 'Uma bela praia com areias brancas e mar cristalino')
+('Deestino sem reserva', 'Uma bela praia linda com areias brancas e mar cristalino')
 
 -- Tras todos os destinos e as reservas se tiverem -- 
 SELECT * FROM reservas rs
@@ -28,6 +28,8 @@ LEFT JOIN reservas rs
 -- Usuários que não fizeram nenhuma reserva
 SELECT nome
 FROM usuarios
+
+
 WHERE id NOT IN (SELECT id_usuario FROM reservas);
 
 -- Subconsulta para encontrar os destinos menos populares (com menos reservas):
